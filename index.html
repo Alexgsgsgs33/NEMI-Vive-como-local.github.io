@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEMI | Zacatlán y Chignahuapan - Plataforma Turística</title>
+    
+    <!-- Meta tags SEO mejorados -->
+    <meta name="description" content="Plataforma turística oficial de Zacatlán y Chignahuapan. Reserva hoteles, tours, restaurantes y vive experiencias únicas en los Pueblos Mágicos de Puebla.">
+    <meta name="keywords" content="Zacatlán, Chignahuapan, turismo, Puebla, hoteles, reservas, tours, gastronomía, eventos">
+    <meta name="author" content="NEMI Plataforma Turística">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="NEMI | Experiencias Únicas en Pueblos Mágicos">
+    <meta property="og:description" content="Descubre y reserva lo mejor de Zacatlán y Chignahuapan">
+    <meta property="og:image" content="https://nemi.mx/images/og-image.jpg">
+    <meta property="og:url" content="https://nemi.mx">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Premium -->
+    <header class="header-premium">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>NEMI</h1>
+                            <p>Turismo Inteligente</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="hoteles.html"><i class="fas fa-hotel"></i> Hoteles</a></li>
+                    <li><a href="lugares.html"><i class="fas fa-map-marked-alt"></i> Tours</a></li>
+                    <li><a href="gastronomia.html"><i class="fas fa-utensils"></i> Gastronomía</a></li>
+                    <li><a href="eventos.html"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+                    <li class="nav-cta">
+                        <a href="proveedores.html" class="btn-proveedor">
+                            <i class="fas fa-user-tie"></i> Soy Proveedor
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Barra de búsqueda -->
+            <div class="search-bar" id="searchBar">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar hoteles, tours, restaurantes..." id="searchInput">
+                    <button class="btn-search">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions">
+                    <!-- Sugerencias dinámicas -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section con estadísticas -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-zacatlan.jpg');">
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="hero-badge">Pueblo Mágico</span>
+                        <h1>Zacatlán de las Manzanas</h1>
+                        <p class="hero-subtitle">Donde el tiempo se detiene y los sabores perduran</p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <i class="fas fa-hotel"></i>
+                                <span>25+ Hoteles Premium</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-utensils"></i>
+                                <span>50+ Restaurantes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <span>4.8/5 Rating</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#reservar" class="btn-hero">
+                                <i class="fas fa-calendar-check"></i> Reservar Ahora
+                            </a>
+                            <a href="#tours" class="btn-hero-outline">
+                                <i class="fas fa-map"></i> Ver Tours
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-chignahuapan.jpg');">
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="hero-badge">Capital de las Esferas</span>
+                        <h1>Chignahuapan</h1>
+                        <p class="hero-subtitle">Magia navideña todo el año y aguas termales curativas</p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <i class="fas fa-gift"></i>
+                                <span>200+ Talleres de Esferas</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-water"></i>
+                                <span>15 Aguas Termales</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>10,000+ Visitantes/Mes</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#paquetes" class="btn-hero">
+                                <i class="fas fa-box"></i> Paquetes Especiales
+                            </a>
+                            <a href="#termales" class="btn-hero-outline">
+                                <i class="fas fa-spa"></i> Termales
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="slide-dots"></div>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Sección de búsqueda rápida -->
+    <section class="quick-search">
+        <div class="container">
+            <div class="search-card">
+                <h2>Encuentra tu experiencia perfecta</h2>
+                <form class="search-form" id="quickSearch">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> Destino</label>
+                            <select class="form-control">
+                                <option value="">Todos los destinos</option>
+                                <option value="zacatlan">Zacatlán</option>
+                                <option value="chignahuapan">Chignahuapan</option>
+                                <option value="ambos">Ambos</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Fechas</label>
+                            <input type="text" class="form-control" placeholder="Selecciona fechas" id="datePicker">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-users"></i> Personas</label>
+                            <div class="counter">
+                                <button type="button" class="counter-btn" data-action="decrease">-</button>
+                                <input type="number" value="2" min="1" max="10" readonly>
+                                <button type="button" class="counter-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-tag"></i> Categoría</label>
+                            <select class="form-control">
+                                <option value="">Todas las categorías</option>
+                                <option value="hotel">Hoteles</option>
+                                <option value="tour">Tours</option>
+                                <option value="restaurant">Restaurantes</option>
+                                <option value="event">Eventos</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-search-main">
+                        <i class="fas fa-search"></i> Buscar Experiencias
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de características principales -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir NEMI?</h2>
+            <p class="section-subtitle">La plataforma turística más completa de la Sierra Norte de Puebla</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Reservas Seguras</h3>
+                    <p>Protegemos tus datos y pagos con encriptación de grado bancario.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-badge-check"></i>
+                    </div>
+                    <h3>Proveedores Verificados</h3>
+                    <p>Todos nuestros socios comerciales pasan por rigurosa verificación.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Asistencia personalizada en español por WhatsApp, teléfono y email.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Mejor Precio Garantizado</h3>
+                    <p>Encontramos el mismo servicio más barato, te devolvemos la diferencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados del mes -->
+    <section class="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experiencias Destacadas</h2>
+                <a href="hoteles.html" class="view-all">
+                    Ver todo <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="featured-grid" id="featuredItems">
+                <!-- Los destacados se cargan dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Zacatlán Section -->
+    <section class="destination" id="zacatlan">
+        <div class="container">
+            <div class="destination-header">
+                <div class="destination-badge">
+                    <i class="fas fa-award"></i> Pueblo Mágico Oficial
+                </div>
+                <h2>Zacatlán de las Manzanas</h2>
+                <p class="destination-subtitle">Cuna de la sidra y los relojes monumentales</p>
+            </div>
+            
+            <div class="destination-content">
+                <div class="destination-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>33,000+ Habitantes</h4>
+                                <p>Comunidad cálida y hospitalaria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <h4>2,020 msnm</h4>
+                                <p>Clima templado todo el año</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>50+ Restaurantes</h4>
+                                <p>Gastronomía tradicional y moderna</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-hotel"></i>
+                            <div>
+                                <h4>25+ Hoteles</h4>
+                                <p>Desde económicos hasta boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="destination-highlights">
+                        <h3>Imperdibles en Zacatlán</h3>
+                        <ul>
+                            <li><i class="fas fa-clock"></i> <strong>Reloj Floral Monumental:</strong> Único en Latinoamérica</li>
+                            <li><i class="fas fa-hiking"></i> <strong>Barranca de los Jilgueros:</strong> Vistas panorámicas espectaculares</li>
+                            <li><i class="fas fa-industry"></i> <strong>Fábrica de Relojes Centenario:</strong> Tour guiado</li>
+                            <li><i class="fas fa-wine-bottle"></i> <strong>Viñedos y Sidrerías:</strong> Degustaciones exclusivas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="lugares.html?destino=zacatlan" class="btn-primary">
+                            <i class="fas fa-map-marked-alt"></i> Ver Tours
+                        </a>
+                        <a href="hoteles.html?destino=zacatlan" class="btn-secondary">
+                            <i class="fas fa-hotel"></i> Hoteles
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="destination-gallery">
+                    <div class="gallery-main">
+                        <img src="images/zacatlan-main.jpg" alt="Zacatlán panorámica" loading="lazy">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="images/zacatlan-1.jpg" alt="Reloj Floral" loading="lazy">
+                        <img src="images/zacatlan-2.jpg" alt="Barranca" loading="lazy">
+                        <img src="images/zacatlan-3.jpg" alt="Sidra" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chignahuapan Section -->
+    <section class="destination alt" id="chignahuapan">
+        <div class="container">
+            <div class="destination-header">
+                <div class="destination-badge">
+                    <i class="fas fa-star"></i> Destino Navideño
+                </div>
+                <h2>Chignahuapan</h2>
+                <p class="destination-subtitle">Donde la magia navideña vive todo el año</p>
+            </div>
+            
+            <div class="destination-content reverse">
+                <div class="destination-gallery">
+                    <div class="gallery-main">
+                        <img src="images/chignahuapan-main.jpg" alt="Chignahuapan panorámica" loading="lazy">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="images/chignahuapan-1.jpg" alt="Esferas" loading="lazy">
+                        <img src="images/chignahuapan-2.jpg" alt="Basílica" loading="lazy">
+                        <img src="images/chignahuapan-3.jpg" alt="Termales" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="destination-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>19,000+ Habitantes</h4>
+                                <p>Artesanos y comerciantes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <h4>2,280 msnm</h4>
+                                <p>Aire puro de montaña</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>200+ Talleres</h4>
+                                <p>Esferas artesanales</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-water"></i>
+                            <div>
+                                <h4>15 Fuentes Termales</h4>
+                                <p>Aguas medicinales</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="destination-highlights">
+                        <h3>Imperdibles en Chignahuapan</h3>
+                        <ul>
+                            <li><i class="fas fa-gift"></i> <strong>Fábricas de Esferas:</strong> Talleres y personalización</li>
+                            <li><i class="fas fa-church"></i> <strong>Basílica de la Inmaculada:</strong> Virgen más grande de Latinoamérica</li>
+                            <li><i class="fas fa-water"></i> <strong>Aguas Termales:</strong> Propiedades curativas</li>
+                            <li><i class="fas fa-fish"></i> <strong>Gastronomía de Trucha:</strong> Fresca del río</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="lugares.html?destino=chignahuapan" class="btn-primary">
+                            <i class="fas fa-map-marked-alt"></i> Ver Tours
+                        </a>
+                        <a href="hoteles.html?destino=chignahuapan" class="btn-secondary">
+                            <i class="fas fa-hotel"></i> Hoteles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de estadísticas -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number" data-count="10000">0</div>
+                    <p>Visitantes Satisfechos</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-hotel"></i>
+                    <div class="stat-number" data-count="75">0</div>
+                    <p>Proveedores Asociados</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="stat-number" data-count="2500">0</div>
+                    <p>Reservas Completadas</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-number" data-count="4.8">0</div>
+                    <p>Rating Promedio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ubicación Estratégica</h2>
+                <p>Conectando los dos Pueblos Mágicos más bellos de Puebla</p>
+            </div>
+            
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-info">
+                    <h3><i class="fas fa-car"></i> Distancias desde:</h3>
+                    <ul>
+                        <li><strong>Ciudad de Puebla:</strong> 2.5 horas (120 km)</li>
+                        <li><strong>Ciudad de México:</strong> 4 horas (210 km)</li>
+                        <li><strong>Tlaxcala:</strong> 2 horas (90 km)</li>
+                        <li><strong>Entre Zacatlán y Chignahuapan:</strong> 45 minutos (40 km)</li>
+                    </ul>
+                    
+                    <div class="transport-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Recomendaciones:</h4>
+                        <p>• Auto particular: Ruta panorámica</p>
+                        <p>• Transporte público: Autobuses cada hora</p>
+                        <p>• Tours organizados: Incluyen transporte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de testimonios -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros visitantes</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Reservamos todo nuestro viaje por NEMI. Desde el hotel hasta los tours, todo fue perfecto. La atención al cliente es excepcional."</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-1.jpg" alt="Ana García">
+                            <div>
+                                <h4>Ana García</h4>
+                                <p>Visitante desde CDMX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Como proveedor, NEMI me ha traído más clientes que cualquier otra plataforma. El sistema de reservas es muy intuitivo."</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-2.jpg" alt="Carlos Martínez">
+                            <div>
+                                <h4>Carlos Martínez</h4>
+                                <p>Dueño de Hotel Vista Zacatlán</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA para proveedores -->
+    <section class="cta-providers">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Eres proveedor turístico?</h2>
+                <p>Únete a la plataforma más visitada de la región y aumenta tus reservas</p>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>+40% reservas en promedio</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Pagos seguros y puntuales</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-headset"></i>
+                        <span>Soporte dedicado 24/7</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="proveedores.html" class="btn-cta-primary">
+                        <i class="fas fa-user-plus"></i> Registrarme como Proveedor
+                    </a>
+                    <a href="https://wa.me/527979751045" target="_blank" class="btn-cta-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-mountain-sun"></i>
+                        <div>
+                            <h3>NEMI</h3>
+                            <p>Turismo Inteligente</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Plataforma turística líder en Zacatlán y Chignahuapan. Conectamos viajeros con experiencias auténticas y proveedores locales verificados.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Destinos</h4>
+                    <ul>
+                        <li><a href="index.html#zacatlan">Zacatlán</a></li>
+                        <li><a href="index.html#chignahuapan">Chignahuapan</a></li>
+                        <li><a href="lugares.html">Tours y Excursiones</a></li>
+                        <li><a href="eventos.html">Eventos Especiales</a></li>
+                        <li><a href="gastronomia.html">Ruta Gastronómica</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Para Viajeros</h4>
+                    <ul>
+                        <li><a href="hoteles.html">Hoteles y Hospedaje</a></li>
+                        <li><a href="#">Paquetes Turísticos</a></li>
+                        <li><a href="#">Guía de Viaje</a></li>
+                        <li><a href="#">FAQ y Ayuda</a></li>
+                        <li><a href="#">Blog de Viajes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Para Proveedores</h4>
+                    <ul>
+                        <li><a href="proveedores.html">Registrar Mi Negocio</a></li>
+                        <li><a href="proveedores.html#planes">Planes y Precios</a></li>
+                        <li><a href="#">Panel de Control</a></li>
+                        <li><a href="#">Recursos Marketing</a></li>
+                        <li><a href="#">Contacto Comercial</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 797 975 1045</p>
+                        <p><i class="fas fa-envelope"></i> hola@nemi.mx</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Zacatlán, Puebla</p>
+                        <p><i class="fas fa-clock"></i> Soporte 24/7</p>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h5>Suscríbete a ofertas</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Tu correo" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 NEMI Plataforma Turística. Todos los derechos reservados.</p>
+                    <div class="footer-links">
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Aviso Legal</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+                
+                <div class="payment-methods">
+                    <span>Métodos de pago aceptados:</span>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fab fa-cc-amex" title="American Express"></i>
+                        <i class="fas fa-money-bill-wave" title="Efectivo"></i>
+                        <i class="fas fa-qrcode" title="Transferencia"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/527979751045?text=Hola%20NEMI,%20quiero%20información%20sobre..." 
+       target="_blank" 
+       class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal de contacto -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3><i class="fas fa-comments"></i> Contactar Proveedor</h3>
+                <p id="modalProviderName"></p>
+            </div>
+            <form id="contactForm" class="modal-form">
+                <div class="form-group">
+                    <label for="name">Nombre completo *</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dates">Fechas de interés</label>
+                    <input type="text" id="dates" placeholder="Ej: 15-18 Marzo 2024">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje *</label>
+                    <textarea id="message" rows="4" required placeholder="Hola, me gustaría hacer una reserva..."></textarea>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Enviar Consulta
+                    </button>
+                    <p class="form-note">* Responderemos en menos de 24 horas</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- MercadoPago SDK -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    
+    <!-- Firebase (opcional para autenticación) -->
+    <script type="module" src="js/firebase-config.js"></script>
+</body>
+</html>
