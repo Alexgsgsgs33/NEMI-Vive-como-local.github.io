@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y Festividades - NEMI | Zacatlán y Chignahuapan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/eventos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-premium">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>NEMI</h1>
+                            <p>Turismo Inteligente</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="hoteles.html"><i class="fas fa-hotel"></i> Hoteles</a></li>
+                    <li><a href="lugares.html"><i class="fas fa-map-marked-alt"></i> Tours</a></li>
+                    <li><a href="gastronomia.html"><i class="fas fa-utensils"></i> Gastronomía</a></li>
+                    <li><a href="eventos.html" class="active"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+                    <li class="nav-cta">
+                        <a href="proveedores.html" class="btn-proveedor">
+                            <i class="fas fa-user-tie"></i> Soy Proveedor
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Eventos -->
+    <section class="hero-subpage eventos-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Eventos y Festividades</h1>
+                <p class="hero-subtitle">Vive la magia cultural de Zacatlán y Chignahuapan</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>50+ Eventos anuales</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>100,000+ Visitantes</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>Tradición centenaria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendario Interactivo -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-calendar-days"></i> Calendario de Eventos 2024
+                </h2>
+                <p class="section-subtitle">Planifica tu visita según los eventos especiales</p>
+            </div>
+            
+            <div class="calendar-container">
+                <div id="calendar"></div>
+                <div class="calendar-legend">
+                    <h4>Leyenda:</h4>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-color zacatlan"></span>
+                            <span>Zacatlán</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color chignahuapan"></span>
+                            <span>Chignahuapan</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color ambos"></span>
+                            <span>Ambas ciudades</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color nacional"></span>
+                            <span>Nacional</span>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-events">
+                        <h4>Próximos Eventos:</h4>
+                        <div class="event-list" id="upcomingEvents">
+                            <!-- Eventos próximos se cargan dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Destacados -->
+    <section class="featured-events alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Eventos Destacados</h2>
+                <p class="section-subtitle">Las festividades más importantes del año</p>
+            </div>
+            
+            <div class="events-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-city="zacatlan">
+                        <i class="fas fa-apple-alt"></i> Zacatlán
+                    </button>
+                    <button class="tab-btn" data-city="chignahuapan">
+                        <i class="fas fa-gift"></i> Chignahuapan
+                    </button>
+                </div>
+                
+                <div class="tab-content active" id="zacatlan-events">
+                    <div class="events-grid">
+                        <!-- Evento 1 - Feria de la Manzana -->
+                        <div class="event-card large">
+                            <div class="event-date">
+                                <div class="month">AGO</div>
+                                <div class="days">15-25</div>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-header">
+                                    <h3>Feria de la Manzana 2024</h3>
+                                    <div class="event-badges">
+                                        <span class="badge-major"><i class="fas fa-star"></i> Evento Mayor</span>
+                                        <span class="badge-family"><i class="fas fa-users"></i> Familiar</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="event-description">
+                                    La feria más importante del año con exposiciones agrícolas, conciertos de artistas nacionales, juegos mecánicos, palenque, charreadas y degustaciones de sidra.
+                                </p>
+                                
+                                <div class="event-details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Centro y Recinto Ferial</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Todo el día</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>Entrada general: $50 MXN</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-highlights">
+                                    <h4>Actividades Destacadas:</h4>
+                                    <ul>
+                                        <li><i class="fas fa-music"></i> Conciertos nocturnos</li>
+                                        <li><i class="fas fa-tractor"></i> Exposición agrícola</li>
+                                        <li><i class="fas fa-wine-bottle"></i> Feria de la sidra</li>
+                                        <li><i class="fas fa-horse"></i> Charreadas y jaripeos</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="event-actions">
+                                    <button class="btn-event-details" data-event="feria-manzana">
+                                        <i class="fas fa-info-circle"></i> Más Información
+                                    </button>
+                                    <button class="btn-reservar" data-provider="Feria de la Manzana">
+                                        <i class="fas fa-ticket-alt"></i> Paquetes Especiales
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Evento 2 - Festival del Reloj -->
+                        <div class="event-card">
+                            <div class="event-date">
+                                <div class="month">MAY</div>
+                                <div class="days">3-5</div>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-header">
+                                    <h3>Festival del Reloj</h3>
+                                    <div class="event-badges">
+                                        <span class="badge-cultural"><i class="fas fa-landmark"></i> Cultural</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="event-description">
+                                    Exposición de relojería artesanal, talleres de reparación, concurso de relojes monumentales y demostraciones de maestros relojeros.
+                                </p>
+                                
+                                <div class="event-details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Plaza Principal y Fábrica Centenario</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>10:00 - 20:00 hrs</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>Talleres desde $100 MXN</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-actions">
+                                    <button class="btn-event-details" data-event="festival-reloj">
+                                        <i class="fas fa-info-circle"></i> Más Información
+                                    </button>
+                                    <button class="btn-reservar" data-provider="Festival del Reloj">
+                                        <i class="fas fa-ticket-alt"></i> Inscribirse a Talleres
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="chignahuapan-events">
+                    <!-- Contenido similar para Chignahuapan -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendario Anual -->
+    <section class="annual-calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calendario Anual por Meses</h2>
+                <p class="section-subtitle">Eventos organizados cronológicamente</p>
+            </div>
+            
+            <div class="calendar-months">
+                <!-- Enero -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Enero</h3>
+                        <div class="season">
+                            <i class="fas fa-snowflake"></i> Invierno
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item">
+                            <div class="event-date">1</div>
+                            <div class="event-info">
+                                <h4>Año Nuevo</h4>
+                                <p>Celebración en plaza principal</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">6</div>
+                            <div class="event-info">
+                                <h4>Día de Reyes</h4>
+                                <p>Reparto de juguetes y rosca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Febrero -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Febrero</h3>
+                        <div class="season">
+                            <i class="fas fa-snowflake"></i> Invierno
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item variable">
+                            <div class="event-date">Var</div>
+                            <div class="event-info">
+                                <h4>Carnaval</h4>
+                                <p>Desfiles, comparsas y bailes</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">14</div>
+                            <div class="event-info">
+                                <h4>Día del Amor</h4>
+                                <p>Eventos para parejas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marzo-Abril -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Marzo-Abril</h3>
+                        <div class="season">
+                            <i class="fas fa-sun"></i> Primavera
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item variable">
+                            <div class="event-date">Var</div>
+                            <div class="event-info">
+                                <h4>Semana Santa</h4>
+                                <p>Procesiones y viacrucis viviente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mayo -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Mayo</h3>
+                        <div class="season">
+                            <i class="fas fa-sun"></i> Primavera
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item">
+                            <div class="event-date">3-5</div>
+                            <div class="event-info">
+                                <h4>Festival del Reloj</h4>
+                                <p>Zacatlán</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">10</div>
+                            <div class="event-info">
+                                <h4>Día de la Madre</h4>
+                                <p>Eventos especiales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agosto -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Agosto</h3>
+                        <div class="season">
+                            <i class="fas fa-umbrella-beach"></i> Verano
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item major">
+                            <div class="event-date">15-25</div>
+                            <div class="event-info">
+                                <h4>Feria de la Manzana</h4>
+                                <p>Evento principal de Zacatlán</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Septiembre -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Septiembre</h3>
+                        <div class="season">
+                            <i class="fas fa-umbrella-beach"></i> Verano
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item">
+                            <div class="event-date">15-16</div>
+                            <div class="event-info">
+                                <h4>Fiestas Patrias</h4>
+                                <p>Grito de Independencia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Octubre-Diciembre -->
+                <div class="month-card">
+                    <div class="month-header">
+                        <h3>Octubre-Diciembre</h3>
+                        <div class="season">
+                            <i class="fas fa-tree"></i> Navidad
+                        </div>
+                    </div>
+                    <div class="month-events">
+                        <div class="event-item major">
+                            <div class="event-date">Oct-Dic</div>
+                            <div class="event-info">
+                                <h4>Feria de la Esfera</h4>
+                                <p>Chignahuapan</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">Dic 12</div>
+                            <div class="event-info">
+                                <h4>Virgen de Guadalupe</h4>
+                                <p>Procesiones y misas</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">Dic 24-25</div>
+                            <div class="event-info">
+                                <h4>Navidad</h4>
+                                <p>Celebraciones familiares</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips para Eventos -->
+    <section class="event-tips alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-lightbulb"></i> Consejos para Eventos
+                </h2>
+                <p class="section-subtitle">Prepara tu visita para disfrutar al máximo</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Transporte</h3>
+                        <p>Durante eventos grandes, hay transporte especial desde Puebla. Reserva con anticipación o considera quedarte en la zona.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Hospedaje</h3>
+                        <p>Reserva hotel con 2-3 meses de anticipación para eventos como la Feria de la Manzana o Feria de la Esfera.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Presupuesto</h3>
+                        <p>Lleva efectivo para compras en puestos artesanales y comida. Los cajeros pueden tener largas filas durante eventos.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Fotografía</h3>
+                        <p>Los mejores momentos: desfiles matutinos, luces nocturnas y eventos culturales. Lleva baterías extras.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Vestimenta</h3>
+                        <p>Ropa cómoda, zapatos para caminar y abrigo para las noches frescas de la sierra.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Gastronomía</h3>
+                        <p>Prueba los platillos especiales de cada evento. Durante la Feria de la Manzana, no te pierdas la sidra artesanal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes para Eventos -->
+    <section class="event-packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Paquetes Especiales para Eventos</h2>
+                <p class="section-subtitle">Todo incluido para disfrutar sin preocupaciones</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Paquete "Feria de la Manzana"</h3>
+                        <div class="package-badge">Agosto 15-25</div>
+                    </div>
+                    
+                    <div class="package-content">
+                        <div class="package-includes">
+                            <h4>Incluye:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 2 noches en hotel céntrico</li>
+                                <li><i class="fas fa-check"></i> Entradas VIP a conciertos</li>
+                                <li><i class="fas fa-check"></i> Tour degustación de sidra</li>
+                                <li><i class="fas fa-check"></i> Transporte local</li>
+                                <li><i class="fas fa-check"></i> Guía de eventos diario</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="price-comparison">
+                                <span class="original-price">$4,200</span>
+                                <span class="discount">-10%</span>
+                            </div>
+                            <div class="final-price">
+                                <span class="amount">$3,780</span>
+                                <span class="per-person">/ persona</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-package" data-package="feria-manzana">
+                            <i class="fas fa-calendar-alt"></i> Reservar Paquete
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="package-card popular">
+                    <div class="package-header">
+                        <h3>Paquete "Navidad Mágica"</h3>
+                        <div class="package-badge">Diciembre 20-26</div>
+                    </div>
+                    
+                    <div class="package-content">
+                        <div class="package-includes">
+                            <h4>Incluye:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 3 noches en hotel temático</li>
+                                <li><i class="fas fa-check"></i> Tour fábricas de esferas</li>
+                                <li><i class="fas fa-check"></i> Cena de Navidad tradicional</li>
+                                <li><i class="fas fa-check"></i> Taller de esferas personalizadas</li>
+                                <li><i class="fas fa-check"></i> Visita a mercados navideños</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="price-comparison">
+                                <span class="original-price">$5,500</span>
+                                <span class="discount">-15%</span>
+                            </div>
+                            <div class="final-price">
+                                <span class="amount">$4,675</span>
+                                <span class="per-person">/ persona</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-package" data-package="navidad-magica">
+                            <i class="fas fa-calendar-alt"></i> Reservar Paquete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Copiar footer de index.html -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/es.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/eventos.js"></script>
+</body>
+</html>

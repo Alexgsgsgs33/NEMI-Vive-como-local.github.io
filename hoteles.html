@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles y Hospedaje - NEMI | Zacatlán y Chignahuapan</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/hoteles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- Header (mismo que index.html) -->
+    <header class="header-premium">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>NEMI</h1>
+                            <p>Turismo Inteligente</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="hoteles.html" class="active"><i class="fas fa-hotel"></i> Hoteles</a></li>
+                    <li><a href="lugares.html"><i class="fas fa-map-marked-alt"></i> Tours</a></li>
+                    <li><a href="gastronomia.html"><i class="fas fa-utensils"></i> Gastronomía</a></li>
+                    <li><a href="eventos.html"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+                    <li class="nav-cta">
+                        <a href="proveedores.html" class="btn-proveedor">
+                            <i class="fas fa-user-tie"></i> Soy Proveedor
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Hoteles -->
+    <section class="hero-subpage">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hoteles y Hospedaje</h1>
+                <p class="hero-subtitle">Encuentra el lugar perfecto para tu estadía en Zacatlán y Chignahuapan</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-bed"></i>
+                        <span>75+ Opciones</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.8/5 Rating</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Reservas Seguras</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros de búsqueda -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-card">
+                <form id="hotelFilters" class="filters-form">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label><i class="fas fa-map-marker-alt"></i> Destino</label>
+                            <select class="form-control" id="filterDestino">
+                                <option value="">Todos los destinos</option>
+                                <option value="zacatlan">Zacatlán</option>
+                                <option value="chignahuapan">Chignahuapan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label><i class="fas fa-calendar"></i> Fechas</label>
+                            <input type="text" class="form-control datepicker" placeholder="Check-in / Check-out" id="filterDates">
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label><i class="fas fa-users"></i> Huéspedes</label>
+                            <div class="guest-counter">
+                                <div class="counter-control">
+                                    <span>Adultos</span>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn minus">-</button>
+                                        <input type="number" value="2" min="1" max="10" readonly>
+                                        <button type="button" class="counter-btn plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="counter-control">
+                                    <span>Niños</span>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn minus">-</button>
+                                        <input type="number" value="0" min="0" max="10" readonly>
+                                        <button type="button" class="counter-btn plus">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label><i class="fas fa-money-bill-wave"></i> Precio</label>
+                            <select class="form-control" id="filterPrice">
+                                <option value="">Todos los precios</option>
+                                <option value="0-1000">Hasta $1,000</option>
+                                <option value="1000-2000">$1,000 - $2,000</option>
+                                <option value="2000+">Más de $2,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label><i class="fas fa-home"></i> Tipo</label>
+                            <div class="filter-chips">
+                                <label class="chip">
+                                    <input type="checkbox" name="tipo" value="hotel">
+                                    <span>Hotel</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="tipo" value="cabaña">
+                                    <span>Cabaña</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="tipo" value="hostal">
+                                    <span>Hostal</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="tipo" value="departamento">
+                                    <span>Departamento</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label><i class="fas fa-star"></i> Amenidades</label>
+                            <div class="filter-chips">
+                                <label class="chip">
+                                    <input type="checkbox" name="amenidad" value="wifi">
+                                    <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="amenidad" value="parking">
+                                    <span><i class="fas fa-car"></i> Parking</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="amenidad" value="pool">
+                                    <span><i class="fas fa-swimming-pool"></i> Alberca</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="amenidad" value="spa">
+                                    <span><i class="fas fa-spa"></i> Spa</span>
+                                </label>
+                                <label class="chip">
+                                    <input type="checkbox" name="amenidad" value="breakfast">
+                                    <span><i class="fas fa-coffee"></i> Desayuno</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button type="button" class="btn-secondary" id="resetFilters">
+                            <i class="fas fa-redo"></i> Limpiar filtros
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-search"></i> Buscar Hoteles
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hoteles Destacados -->
+    <section class="hoteles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hoteles Destacados</h2>
+                <div class="sort-controls">
+                    <span>Ordenar por:</span>
+                    <select class="sort-select">
+                        <option value="rating">Mejor rating</option>
+                        <option value="price-low">Precio más bajo</option>
+                        <option value="price-high">Precio más alto</option>
+                        <option value="name">Nombre</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="hoteles-grid" id="hotelesGrid">
+                <!-- Hotel 1 - Vista Zacatlán -->
+                <div class="hotel-card premium" data-destino="zacatlan" data-price="1200" data-rating="4.8">
+                    <div class="hotel-badge">
+                        <span class="badge-premium"><i class="fas fa-crown"></i> Premium</span>
+                        <span class="badge-verified"><i class="fas fa-check-circle"></i> Verificado</span>
+                    </div>
+                    <div class="hotel-image">
+                        <img src="images/hoteles/vista-zacatlan.jpg" alt="Vista Zacatlán Hotel" loading="lazy">
+                        <button class="favorite-btn" data-id="1" data-type="hotel">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-header">
+                            <h3>Vista Zacatlán Hotel</h3>
+                            <div class="hotel-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                                <span class="review-count">(128 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Centro Histórico, Zacatlán</span>
+                            <span class="distance">• A 150m del Reloj Floral</span>
+                        </div>
+                        
+                        <p class="hotel-description">
+                            Hotel colonial con vistas panorámicas a la barranca. Habitaciones equipadas con amenities de lujo y servicio personalizado.
+                        </p>
+                        
+                        <div class="hotel-features">
+                            <span><i class="fas fa-wifi"></i> Wi-Fi gratis</span>
+                            <span><i class="fas fa-car"></i> Estacionamiento</span>
+                            <span><i class="fas fa-utensils"></i> Restaurante</span>
+                            <span><i class="fas fa-spa"></i> Spa</span>
+                        </div>
+                        
+                        <div class="hotel-footer">
+                            <div class="price-info">
+                                <div class="price-main">
+                                    <span class="price">$1,200</span>
+                                    <span class="period">/ noche</span>
+                                </div>
+                                <div class="price-details">
+                                    <span>Incluye impuestos</span>
+                                    <span>Desayuno buffet incluido</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Vista Zacatlán Hotel">
+                                <i class="fas fa-calendar-check"></i> Reservar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 2 - Cabañas Ticomulco -->
+                <div class="hotel-card" data-destino="zacatlan" data-price="1800" data-rating="4.4">
+                    <div class="hotel-badge">
+                        <span class="badge-popular"><i class="fas fa-fire"></i> Popular</span>
+                    </div>
+                    <div class="hotel-image">
+                        <img src="images/hoteles/cabanas-ticomulco.jpg" alt="Cabañas Ticomulco" loading="lazy">
+                        <button class="favorite-btn" data-id="2" data-type="hotel">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-header">
+                            <h3>Cabañas Ticomulco</h3>
+                            <div class="hotel-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                                <span class="review-count">(89 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bosque de Ticomulco, Zacatlán</span>
+                            <span class="distance">• A 5km del centro</span>
+                        </div>
+                        
+                        <p class="hotel-description">
+                            Cabañas rústicas con chimenea y jacuzzi privado. Ideal para escapadas románticas y familias que buscan contacto con la naturaleza.
+                        </p>
+                        
+                        <div class="hotel-features">
+                            <span><i class="fas fa-fire"></i> Chimenea</span>
+                            <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                            <span><i class="fas fa-tree"></i> Jardín privado</span>
+                            <span><i class="fas fa-paw"></i> Mascotas permitidas</span>
+                        </div>
+                        
+                        <div class="hotel-footer">
+                            <div class="price-info">
+                                <div class="price-main">
+                                    <span class="price">$1,800</span>
+                                    <span class="period">/ noche</span>
+                                </div>
+                                <div class="price-details">
+                                    <span>Mínimo 2 noches</span>
+                                    <span>Leña incluida</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Cabañas Ticomulco">
+                                <i class="fas fa-calendar-check"></i> Consultar Disponibilidad
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 3 - Hotel Termales Chignahuapan -->
+                <div class="hotel-card premium" data-destino="chignahuapan" data-price="1500" data-rating="4.9">
+                    <div class="hotel-badge">
+                        <span class="badge-premium"><i class="fas fa-crown"></i> Premium</span>
+                        <span class="badge-verified"><i class="fas fa-check-circle"></i> Verificado</span>
+                        <span class="badge-bestseller"><i class="fas fa-medal"></i> Más reservado</span>
+                    </div>
+                    <div class="hotel-image">
+                        <img src="images/hoteles/termales-chignahuapan.jpg" alt="Hotel Termales Chignahuapan" loading="lazy">
+                        <button class="favorite-btn" data-id="3" data-type="hotel">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-header">
+                            <h3>Hotel y Aguas Termales</h3>
+                            <div class="hotel-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                                <span class="review-count">(214 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Frente a la Laguna, Chignahuapan</span>
+                            <span class="distance">• Acceso directo a termales</span>
+                        </div>
+                        
+                        <p class="hotel-description">
+                            Complejo termal con aguas medicinales, spa completo y masajes terapéuticos. Todas las habitaciones con vista a la laguna.
+                        </p>
+                        
+                        <div class="hotel-features">
+                            <span><i class="fas fa-water"></i> Termas incluidas</span>
+                            <span><i class="fas fa-spa"></i> Spa & masajes</span>
+                            <span><i class="fas fa-swimming-pool"></i> Alberca termal</span>
+                            <span><i class="fas fa-dumbbell"></i> Gimnasio</span>
+                        </div>
+                        
+                        <div class="hotel-footer">
+                            <div class="price-info">
+                                <div class="price-main">
+                                    <span class="price">$1,500</span>
+                                    <span class="period">/ noche</span>
+                                </div>
+                                <div class="price-details">
+                                    <span>Acceso ilimitado a termales</span>
+                                    <span>Masaje de bienvenida</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Hotel y Aguas Termales Chignahuapan">
+                                <i class="fas fa-calendar-check"></i> Reservar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 4 - Hotel Osalle Inn -->
+                <div class="hotel-card" data-destino="chignahuapan" data-price="900" data-rating="4.7">
+                    <div class="hotel-badge">
+                        <span class="badge-economic"><i class="fas fa-peso-sign"></i> Económico</span>
+                    </div>
+                    <div class="hotel-image">
+                        <img src="images/hoteles/osalle-inn.jpg" alt="Hotel Osalle Inn" loading="lazy">
+                        <button class="favorite-btn" data-id="4" data-type="hotel">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-header">
+                            <h3>Hotel Osalle Inn</h3>
+                            <div class="hotel-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                                <span class="review-count">(67 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Centro Chignahuapan</span>
+                            <span class="distance">• A 200m de la Basílica</span>
+                        </div>
+                        
+                        <p class="hotel-description">
+                            Hotel familiar con decoración tradicional. Habitaciones cómodas con terraza y vistas a la ciudad. Atención personalizada.
+                        </p>
+                        
+                        <div class="hotel-features">
+                            <span><i class="fas fa-coffee"></i> Desayuno incluido</span>
+                            <span><i class="fas fa-wifi"></i> Wi-Fi gratis</span>
+                            <span><i class="fas fa-tshirt"></i> Lavandería</span>
+                            <span><i class="fas fa-concierge-bell"></i> Servicio a la habitación</span>
+                        </div>
+                        
+                        <div class="hotel-footer">
+                            <div class="price-info">
+                                <div class="price-main">
+                                    <span class="price">$900</span>
+                                    <span class="period">/ noche</span>
+                                </div>
+                                <div class="price-details">
+                                    <span>Desayuno continental</span>
+                                    <span>Estacionamiento gratis</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Hotel Osalle Inn">
+                                <i class="fas fa-calendar-check"></i> Consultar Disponibilidad
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Opciones económicas -->
+            <div class="budget-section">
+                <h3 class="subsection-title">
+                    <i class="fas fa-peso-sign"></i> Opciones Económicas
+                </h3>
+                
+                <div class="budget-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Ubicación</th>
+                                <th>Tipo</th>
+                                <th>Precio</th>
+                                <th>Contacto Directo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Casa Huésped Manzana</td>
+                                <td>Centro Zacatlán</td>
+                                <td>Habitación compartida</td>
+                                <td><strong>$400</strong> / noche</td>
+                                <td>
+                                    <button class="btn-contact" data-provider="Casa Huésped Manzana">
+                                        <i class="fas fa-phone"></i> Contactar
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Hostal Laguna</td>
+                                <td>Chignahuapan centro</td>
+                                <td>Dormitorio</td>
+                                <td><strong>$350</strong> / noche</td>
+                                <td>
+                                    <button class="btn-contact" data-provider="Hostal Laguna">
+                                        <i class="fab fa-whatsapp"></i> WhatsApp
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cabañas Familiares</td>
+                                <td>Zona boscosa</td>
+                                <td>Cabaña completa</td>
+                                <td><strong>$2,500</strong> / noche</td>
+                                <td>
+                                    <button class="btn-contact" data-provider="Cabañas Familiares">
+                                        <i class="fas fa-envelope"></i> Email
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Promociones -->
+            <div class="promotions-section">
+                <h3 class="subsection-title">
+                    <i class="fas fa-percentage"></i> Promociones Especiales
+                </h3>
+                
+                <div class="promotions-grid">
+                    <div class="promo-card">
+                        <div class="promo-header">
+                            <span class="promo-badge">-20%</span>
+                            <h4>Luna de Miel</h4>
+                        </div>
+                        <div class="promo-content">
+                            <p>2 noches en suite + cena romántica + masaje para pareja</p>
+                            <div class="promo-price">
+                                <span class="old-price">$4,500</span>
+                                <span class="new-price">$3,600</span>
+                            </div>
+                            <button class="btn-promo" data-promo="luna-miel">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <div class="promo-header">
+                            <span class="promo-badge">-15%</span>
+                            <h4>Escapada Familiar</h4>
+                        </div>
+                        <div class="promo-content">
+                            <p>3 noches en cabaña familiar + tour guiado + actividades niños</p>
+                            <div class="promo-price">
+                                <span class="old-price">$6,000</span>
+                                <span class="new-price">$5,100</span>
+                            </div>
+                            <button class="btn-promo" data-promo="escapada-familiar">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Hoteles -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Cómo funciona la reserva?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>1. Selecciona fechas y huéspedes<br>
+                        2. Envía tu solicitud de reserva<br>
+                        3. Recibe confirmación en menos de 24h<br>
+                        4. Realiza el pago seguro<br>
+                        5. Recibe voucher por email</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Qué métodos de pago aceptan?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos tarjetas de crédito/débito (Visa, MasterCard, American Express), transferencias bancarias, PayPal y MercadoPago.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Hay política de cancelación?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cancelación gratuita hasta 48h antes del check-in. Después de ese plazo, se cobra el 50% de la primera noche.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Los precios incluyen impuestos?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, todos los precios mostrados incluyen IVA (16%) y cargos de servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Reservas -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Necesitas ayuda con tu reserva?</h2>
+                <p>Nuestro equipo de atención al cliente está disponible 24/7 para ayudarte</p>
+                
+                <div class="cta-contact">
+                    <a href="tel:7979751045" class="cta-phone">
+                        <i class="fas fa-phone"></i> 797 975 1045
+                    </a>
+                    <a href="https://wa.me/527979751045" target="_blank" class="cta-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:reservas@nemi.mx" class="cta-email">
+                        <i class="fas fa-envelope"></i> reservas@nemi.mx
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (mismo que index.html) -->
+    <footer class="footer">
+        <!-- Copiar footer de index.html -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hoteles.js"></script>
+</body>
+</html>

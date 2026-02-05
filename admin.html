@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - NEMI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.css">
+</head>
+<body class="admin-body">
+    <!-- Sidebar -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-mountain-sun"></i>
+                <div>
+                    <h2>NEMI</h2>
+                    <p>Panel Admin</p>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="#dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#proveedores">
+                    <i class="fas fa-users"></i>
+                    <span>Proveedores</span>
+                    <span class="badge">75</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#reservas">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Reservas</span>
+                    <span class="badge">12</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#finanzas">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Finanzas</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#contenido">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Contenido</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#configuracion">
+                    <i class="fas fa-cog"></i>
+                    <span>Configuración</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <img src="images/admin/admin-user.jpg" alt="Administrador">
+                <div>
+                    <h4>Admin NEMI</h4>
+                    <p>administrador@nemi.mx</p>
+                </div>
+            </div>
+            <a href="logout.html" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Dashboard</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="btn-notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </button>
+                    
+                    <div class="date-display">
+                        <i class="fas fa-calendar"></i>
+                        <span id="currentDate"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="admin-content" id="dashboard">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Ingresos Mensuales</h3>
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">$45,820</span>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12.5%
+                        </span>
+                    </div>
+                    <div class="stat-footer">
+                        <span>vs mes anterior</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Proveedores Activos</h3>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">75</span>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 8.7%
+                        </span>
+                    </div>
+                    <div class="stat-footer">
+                        <span>5 nuevos este mes</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Reservas del Mes</h3>
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">342</span>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 15.2%
+                        </span>
+                    </div>
+                    <div class="stat-footer">
+                        <span>Tasa de conversión: 4.8%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Rating Promedio</h3>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-change neutral">
+                            <i class="fas fa-minus"></i> 0.0%
+                        </span>
+                    </div>
+                    <div class="stat-footer">
+                        <span>1,245 reseñas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Ingresos por Mes</h3>
+                        <select class="chart-period">
+                            <option value="year">Último año</option>
+                            <option value="quarter">Último trimestre</option>
+                            <option value="month">Último mes</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Reservas por Categoría</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3>Actividad Reciente</h3>
+                        <button class="btn-view-all">Ver todo</button>
+                    </div>
+                    
+                    <div class="activity-list">
+                        <div class="activity-item new">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Nuevo Proveedor Registrado</h4>
+                                <p>Hotel Boutique Sierra se registró en el plan Premium</p>
+                                <span class="activity-time">Hace 15 minutos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Reserva Confirmada</h4>
+                                <p>Ana García reservó 3 noches en Vista Zacatlán Hotel</p>
+                                <span class="activity-time">Hace 2 horas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Nueva Reseña</h4>
+                                <p>Carlos Martínez calificó con 5 estrellas el Tour Esferas</p>
+                                <span class="activity-time">Hace 4 horas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Pago Procesado</h4>
+                                <p>Transferencia completada a Cabañas Ticomulco</p>
+                                <span class="activity-time">Ayer, 14:30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions-card">
+                    <div class="actions-header">
+                        <h3>Acciones Rápidas</h3>
+                    </div>
+                    
+                    <div class="actions-grid">
+                        <button class="action-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>Nuevo Proveedor</span>
+                        </button>
+                        
+                        <button class="action-btn">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Generar Reporte</span>
+                        </button>
+                        
+                        <button class="action-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Enviar Email</span>
+                        </button>
+                        
+                        <button class="action-btn">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Ver Analytics</span>
+                        </button>
+                        
+                        <button class="action-btn">
+                            <i class="fas fa-cog"></i>
+                            <span>Configuración</span>
+                        </button>
+                        
+                        <button class="action-btn">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Soporte</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proveedores Content -->
+        <div class="admin-content" id="proveedores" style="display: none;">
+            <!-- Contenido de proveedores -->
+        </div>
+
+        <!-- Reservas Content -->
+        <div class="admin-content" id="reservas" style="display: none;">
+            <!-- Contenido de reservas -->
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

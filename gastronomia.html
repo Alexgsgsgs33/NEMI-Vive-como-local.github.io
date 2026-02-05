@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastronomía - NEMI | Zacatlán y Chignahuapan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gastronomia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-premium">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>NEMI</h1>
+                            <p>Turismo Inteligente</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="hoteles.html"><i class="fas fa-hotel"></i> Hoteles</a></li>
+                    <li><a href="lugares.html"><i class="fas fa-map-marked-alt"></i> Tours</a></li>
+                    <li><a href="gastronomia.html" class="active"><i class="fas fa-utensils"></i> Gastronomía</a></li>
+                    <li><a href="eventos.html"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+                    <li class="nav-cta">
+                        <a href="proveedores.html" class="btn-proveedor">
+                            <i class="fas fa-user-tie"></i> Soy Proveedor
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Gastronomía -->
+    <section class="hero-subpage gastronomia-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Gastronomía Local</h1>
+                <p class="hero-subtitle">Sabores auténticos de la Sierra Norte de Puebla</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-utensils"></i>
+                        <span>50+ Restaurantes</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.7/5 Rating</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Ruta gastronómica</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegación por categorías gastronómicas -->
+    <section class="gastro-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <a href="#platos-tipicos" class="category-card active">
+                    <div class="category-icon">
+                        <i class="fas fa-utensil-spoon"></i>
+                    </div>
+                    <span>Platos Típicos</span>
+                </a>
+                
+                <a href="#restaurantes" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <span>Restaurantes</span>
+                </a>
+                
+                <a href="#bebidas" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <span>Bebidas</span>
+                </a>
+                
+                <a href="#dulces" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <span>Dulces Regionales</span>
+                </a>
+                
+                <a href="#experiencias" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cheese"></i>
+                    </div>
+                    <span>Experiencias</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platos Típicos -->
+    <section id="platos-tipicos" class="dishes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-utensil-spoon"></i> Platos Típicos
+                </h2>
+                <p class="section-subtitle">Los sabores que definen nuestra región</p>
+            </div>
+            
+            <div class="dishes-grid">
+                <!-- Plato 1 - Trucha al Mojo de Ajo -->
+                <div class="dish-card featured">
+                    <div class="dish-image">
+                        <img src="images/gastronomia/trucha-mojo-ajo.jpg" alt="Trucha al Mojo de Ajo" loading="lazy">
+                        <div class="dish-badges">
+                            <span class="badge-specialty"><i class="fas fa-fish"></i> Especialidad</span>
+                            <span class="badge-location"><i class="fas fa-map-marker-alt"></i> Chignahuapan</span>
+                        </div>
+                    </div>
+                    <div class="dish-content">
+                        <div class="dish-header">
+                            <h3>Trucha al Mojo de Ajo</h3>
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (214 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="dish-description">
+                            Trucha fresca de río preparada con ajo dorado, mantequilla y hierbas locales. Acompañada de arroz y ensalada fresca.
+                        </p>
+                        
+                        <div class="dish-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Preparación: 15-20 min</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-fire"></i>
+                                <span>Cocina: Tradicional</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-leaf"></i>
+                                <span>Ingredientes locales</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-price">
+                            <div class="price-info">
+                                <span class="price">$180 - $250</span>
+                                <span class="price-label">MXN por persona</span>
+                            </div>
+                            <div class="dish-recommendation">
+                                <p><strong>Recomendado en:</strong> Restaurantes junto a la laguna de Chignahuapan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-actions">
+                            <button class="btn-reservar" data-provider="Restaurante La Trucha">
+                                <i class="fas fa-utensils"></i> Reservar Mesa
+                            </button>
+                            <button class="btn-recipe">
+                                <i class="fas fa-book-open"></i> Ver Receta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 2 - Cecina de Res -->
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="images/gastronomia/cecina-res.jpg" alt="Cecina de Res" loading="lazy">
+                        <div class="dish-badges">
+                            <span class="badge-location"><i class="fas fa-map-marker-alt"></i> Zacatlán</span>
+                        </div>
+                    </div>
+                    <div class="dish-content">
+                        <div class="dish-header">
+                            <h3>Cecina de Res Zacatecana</h3>
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.5 (156 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="dish-description">
+                            Carne de res seca y salada, asada a la parrilla y servida con salsa borracha, nopales y frijoles charros.
+                        </p>
+                        
+                        <div class="dish-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Preparación: 10-15 min</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-fire"></i>
+                                <span>Asada a la parrilla</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-pepper-hot"></i>
+                                <span>Picante moderado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-price">
+                            <div class="price-info">
+                                <span class="price">$150 - $200</span>
+                                <span class="price-label">MXN por persona</span>
+                            </div>
+                            <div class="dish-recommendation">
+                                <p><strong>Recomendado en:</strong> Mercado municipal de Zacatlán</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-actions">
+                            <button class="btn-reservar" data-provider="Mercado Zacatlán">
+                                <i class="fas fa-utensils"></i> Reservar Mesa
+                            </button>
+                            <button class="btn-recipe">
+                                <i class="fas fa-book-open"></i> Ver Receta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 3 - Mole Poblano -->
+                <div class="dish-card premium">
+                    <div class="dish-image">
+                        <img src="images/gastronomia/mole-poblano.jpg" alt="Mole Poblano" loading="lazy">
+                        <div class="dish-badges">
+                            <span class="badge-premium"><i class="fas fa-crown"></i> Premium</span>
+                            <span class="badge-location"><i class="fas fa-map-marker-alt"></i> Ambas regiones</span>
+                        </div>
+                    </div>
+                    <div class="dish-content">
+                        <div class="dish-header">
+                            <h3>Mole Poblano Tradicional</h3>
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.8 (189 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="dish-description">
+                            Mole preparado con más de 20 ingredientes incluyendo chocolate, chiles y especias. Servido con pollo, arroz y tortillas hechas a mano.
+                        </p>
+                        
+                        <div class="dish-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Preparación: 25-30 min</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-mortar-pestle"></i>
+                                <span>Molido en metate</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-seedling"></i>
+                                <span>Ingredientes orgánicos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-price">
+                            <div class="price-info">
+                                <span class="price">$120 - $180</span>
+                                <span class="price-label">MXN por persona</span>
+                            </div>
+                            <div class="dish-recommendation">
+                                <p><strong>Recomendado en:</strong> Fonda Doña Chela, Zacatlán</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-actions">
+                            <button class="btn-reservar" data-provider="Fonda Doña Chela">
+                                <i class="fas fa-utensils"></i> Reservar Mesa
+                            </button>
+                            <button class="btn-recipe">
+                                <i class="fas fa-book-open"></i> Ver Receta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurantes -->
+    <section id="restaurantes" class="restaurants-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-store"></i> Restaurantes Recomendados
+                </h2>
+                <p class="section-subtitle">Donde probar los mejores platillos</p>
+            </div>
+            
+            <div class="restaurants-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th>Ubicación</th>
+                            <th>Precio Promedio</th>
+                            <th>Horario</th>
+                            <th>Reservar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="restaurant-premium">
+                            <td>
+                                <div class="restaurant-info">
+                                    <strong>La Trucha Feliz</strong>
+                                    <div class="restaurant-rating">
+                                        <i class="fas fa-star"></i> 4.7
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Trucha al gusto</td>
+                            <td>Chignahuapan centro</td>
+                            <td><span class="price-tag">$$</span></td>
+                            <td>9:00 - 20:00</td>
+                            <td>
+                                <button class="btn-reservar-small" data-provider="La Trucha Feliz">
+                                    <i class="fas fa-calendar"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="restaurant-info">
+                                    <strong>El Jardín de la Sidra</strong>
+                                    <div class="restaurant-rating">
+                                        <i class="fas fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Comida regional + sidra</td>
+                            <td>Zacatlán centro</td>
+                            <td><span class="price-tag">$$</span></td>
+                            <td>8:00 - 22:00</td>
+                            <td>
+                                <button class="btn-reservar-small" data-provider="El Jardín de la Sidra">
+                                    <i class="fas fa-calendar"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="restaurant-info">
+                                    <strong>Mercado Municipal</strong>
+                                    <div class="restaurant-rating">
+                                        <i class="fas fa-star"></i> 4.3
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Comida casera tradicional</td>
+                            <td>Ambas ciudades</td>
+                            <td><span class="price-tag">$</span></td>
+                            <td>7:00 - 18:00</td>
+                            <td>
+                                <button class="btn-reservar-small" data-provider="Mercado Municipal">
+                                    <i class="fas fa-calendar"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr class="restaurant-premium">
+                            <td>
+                                <div class="restaurant-info">
+                                    <strong>Café del Bosque</strong>
+                                    <div class="restaurant-rating">
+                                        <i class="fas fa-star"></i> 4.8
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Desayunos típicos</td>
+                            <td>Carretera Zacatlán</td>
+                            <td><span class="price-tag">$$</span></td>
+                            <td>7:00 - 16:00</td>
+                            <td>
+                                <button class="btn-reservar-small" data-provider="Café del Bosque">
+                                    <i class="fas fa-calendar"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="restaurant-info">
+                                    <strong>Los Sabores de la Sierra</strong>
+                                    <div class="restaurant-rating">
+                                        <i class="fas fa-star"></i> 4.6
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Cocina fusión</td>
+                            <td>Chignahuapan</td>
+                            <td><span class="price-tag">$$$</span></td>
+                            <td>13:00 - 23:00</td>
+                            <td>
+                                <button class="btn-reservar-small" data-provider="Los Sabores de la Sierra">
+                                    <i class="fas fa-calendar"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="restaurant-filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="zacatlan">Zacatlán</button>
+                    <button class="filter-btn" data-filter="chignahuapan">Chignahuapan</button>
+                    <button class="filter-btn" data-filter="premium">Premium</button>
+                    <button class="filter-btn" data-filter="economico">Económicos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bebidas Tradicionales -->
+    <section id="bebidas" class="drinks-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-wine-glass-alt"></i> Bebidas Tradicionales
+                </h2>
+                <p class="section-subtitle">Los líquidos que alegran el paladar</p>
+            </div>
+            
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="drink-content">
+                        <h3>Sidra de Manzana</h3>
+                        <p class="drink-description">
+                            Bebida fermentada de manzana, natural y burbujeante. Variedades dulce, seca y semiseca.
+                        </p>
+                        <div class="drink-details">
+                            <div class="detail">
+                                <strong>Grado alcohólico:</strong> 4-6%
+                            </div>
+                            <div class="detail">
+                                <strong>Origen:</strong> Zacatlán
+                            </div>
+                        </div>
+                        <div class="drink-price">
+                            <span class="price">$80 - $150</span>
+                            <span class="unit">/ botella</span>
+                        </div>
+                        <button class="btn-drink" data-drink="sidra">
+                            <i class="fas fa-shopping-cart"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <div class="drink-content">
+                        <h3>Licor de Manzana</h3>
+                        <p class="drink-description">
+                            Licor artesanal de manzana con hierbas locales. Perfecto como digestivo o en cocteles.
+                        </p>
+                        <div class="drink-details">
+                            <div class="detail">
+                                <strong>Grado alcohólico:</strong> 20-25%
+                            </div>
+                            <div class="detail">
+                                <strong>Origen:</strong> Zacatlán
+                            </div>
+                        </div>
+                        <div class="drink-price">
+                            <span class="price">$120 - $200</span>
+                            <span class="unit">/ botella</span>
+                        </div>
+                        <button class="btn-drink" data-drink="licor-manzana">
+                            <i class="fas fa-shopping-cart"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="drink-content">
+                        <h3>Café de la Sierra</h3>
+                        <p class="drink-description">
+                            Café orgánico cultivado en las montañas de la región. Notas de chocolate y nuez.
+                        </p>
+                        <div class="drink-details">
+                            <div class="detail">
+                                <strong>Tipo:</strong> Arábica
+                            </div>
+                            <div class="detail">
+                                <strong>Tostado:</strong> Medio
+                            </div>
+                        </div>
+                        <div class="drink-price">
+                            <span class="price">$250 - $400</span>
+                            <span class="unit">/ kg</span>
+                        </div>
+                        <button class="btn-drink" data-drink="cafe">
+                            <i class="fas fa-shopping-cart"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="drink-content">
+                        <h3>Vino de Manzana</h3>
+                        <p class="drink-description">
+                            Vino artesanal de manzana, elaborado con técnicas tradicionales. Añejado en barrica.
+                        </p>
+                        <div class="drink-details">
+                            <div class="detail">
+                                <strong>Grado alcohólico:</strong> 12-14%
+                            </div>
+                            <div class="detail">
+                                <strong>Añejamiento:</strong> 6-12 meses
+                            </div>
+                        </div>
+                        <div class="drink-price">
+                            <span class="price">$350 - $600</span>
+                            <span class="unit">/ botella</span>
+                        </div>
+                        <button class="btn-drink" data-drink="vino-manzana">
+                            <i class="fas fa-shopping-cart"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencias Gastronómicas -->
+    <section id="experiencias" class="experiences-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-cheese"></i> Experiencias Gastronómicas
+                </h2>
+                <p class="section-subtitle">Vive la gastronomía más allá del plato</p>
+            </div>
+            
+            <div class="experiences-grid">
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="images/experiencias/taller-sidra.jpg" alt="Taller de Sidra" loading="lazy">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Taller de Elaboración de Sidra</h3>
+                        <p class="experience-description">
+                            Aprende el proceso completo de elaboración de sidra artesanal, desde la selección de manzanas hasta el embotellado.
+                        </p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>4 horas</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>Grupos de 2-8</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Zacatlán</span>
+                            </div>
+                        </div>
+                        <div class="experience-price">
+                            <span class="price">$800</span>
+                            <span class="per-person">/ persona</span>
+                        </div>
+                        <button class="btn-experience" data-experience="taller-sidra">
+                            <i class="fas fa-calendar-check"></i> Reservar Experiencia
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="images/experiencias/cocina-tradicional.jpg" alt="Clase de Cocina" loading="lazy">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Clase de Cocina Tradicional</h3>
+                        <p class="experience-description">
+                            Clase práctica donde aprenderás a preparar mole poblano, cecina y otros platillos típicos con chefs locales.
+                        </p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 horas</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>Grupos de 2-6</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ambas ciudades</span>
+                            </div>
+                        </div>
+                        <div class="experience-price">
+                            <span class="price">$600</span>
+                            <span class="per-person">/ persona</span>
+                        </div>
+                        <button class="btn-experience" data-experience="clase-cocina">
+                            <i class="fas fa-calendar-check"></i> Reservar Experiencia
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="images/experiencias/cata-sidra.jpg" alt="Cata de Sidra" loading="lazy">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Cata Guiada de Sidras</h3>
+                        <p class="experience-description">
+                            Experiencia sensorial donde probarás 6 diferentes sidras artesanales, aprendiendo a distinguir sus características.
+                        </p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>2 horas</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>Grupos de 2-10</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Zacatlán</span>
+                            </div>
+                        </div>
+                        <div class="experience-price">
+                            <span class="price">$400</span>
+                            <span class="per-person">/ persona</span>
+                        </div>
+                        <button class="btn-experience" data-experience="cata-sidra">
+                            <i class="fas fa-calendar-check"></i> Reservar Experiencia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Copiar footer de index.html -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/gastronomia.js"></script>
+</body>
+</html>

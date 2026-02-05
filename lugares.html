@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours y Atracciones - NEMI | Zacatlán y Chignahuapan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tours.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-premium">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>NEMI</h1>
+                            <p>Turismo Inteligente</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="hoteles.html"><i class="fas fa-hotel"></i> Hoteles</a></li>
+                    <li><a href="lugares.html" class="active"><i class="fas fa-map-marked-alt"></i> Tours</a></li>
+                    <li><a href="gastronomia.html"><i class="fas fa-utensils"></i> Gastronomía</a></li>
+                    <li><a href="eventos.html"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+                    <li class="nav-cta">
+                        <a href="proveedores.html" class="btn-proveedor">
+                            <i class="fas fa-user-tie"></i> Soy Proveedor
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Tours -->
+    <section class="hero-subpage tours-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tours y Atracciones</h1>
+                <p class="hero-subtitle">Descubre las experiencias únicas que Zacatlán y Chignahuapan tienen para ti</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>30+ Tours disponibles</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>Guías certificados</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Seguro de viaje incluido</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegación por categorías -->
+    <section class="categories-nav">
+        <div class="container">
+            <div class="categories-grid">
+                <a href="#zacatlan-tours" class="category-card active">
+                    <div class="category-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <span>Zacatlán</span>
+                </a>
+                
+                <a href="#chignahuapan-tours" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <span>Chignahuapan</span>
+                </a>
+                
+                <a href="#paquetes" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <span>Paquetes</span>
+                </a>
+                
+                <a href="#aventura" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <span>Aventura</span>
+                </a>
+                
+                <a href="#cultural" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <span>Cultural</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zacatlán Tours -->
+    <section id="zacatlan-tours" class="tours-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-apple-alt"></i> Tours en Zacatlán
+                </h2>
+                <p class="section-subtitle">Conoce la magia del Pueblo Mágico de la manzana</p>
+            </div>
+            
+            <div class="tours-grid">
+                <!-- Tour 1 - Reloj Floral -->
+                <div class="tour-card featured">
+                    <div class="tour-image">
+                        <img src="images/tours/reloj-floral.jpg" alt="Tour Reloj Floral" loading="lazy">
+                        <div class="tour-badges">
+                            <span class="badge-featured"><i class="fas fa-star"></i> Más popular</span>
+                            <span class="badge-duration"><i class="fas fa-clock"></i> 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <h3>Tour Reloj Floral Monumental</h3>
+                            <div class="tour-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.7 (89 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="tour-description">
+                            Visita guiada al único reloj floral de Latinoamérica. Incluye explicación del mecanismo, historia y fotos en el mejor ángulo.
+                        </p>
+                        
+                        <div class="tour-features">
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 11:00 AM</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>Grupos de 1-15 personas</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-language"></i>
+                                <span>Español/Inglés</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-footer">
+                            <div class="price-info">
+                                <div class="price">
+                                    <span class="amount">$250</span>
+                                    <span class="per-person">/ persona</span>
+                                </div>
+                                <div class="includes">
+                                    <span><i class="fas fa-check"></i> Guía certificado</span>
+                                    <span><i class="fas fa-check"></i> Fotografías</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Tour Reloj Floral">
+                                <i class="fas fa-calendar-check"></i> Reservar Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tour 2 - Barranca de los Jilgueros -->
+                <div class="tour-card adventure">
+                    <div class="tour-image">
+                        <img src="images/tours/barranca-jilgueros.jpg" alt="Barranca de los Jilgueros" loading="lazy">
+                        <div class="tour-badges">
+                            <span class="badge-adventure"><i class="fas fa-hiking"></i> Aventura</span>
+                            <span class="badge-duration"><i class="fas fa-clock"></i> 4 horas</span>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <h3>Senderismo Barranca de los Jilgueros</h3>
+                            <div class="tour-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (45 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="tour-description">
+                            Ruta de senderismo con vistas espectaculares, cascadas y miradores. Equipo incluido y guía especializado en ecoturismo.
+                        </p>
+                        
+                        <div class="tour-features">
+                            <div class="feature">
+                                <i class="fas fa-shoe-prints"></i>
+                                <span>Dificultad: Media</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-route"></i>
+                                <span>5 km de recorrido</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>Snack incluido</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-footer">
+                            <div class="price-info">
+                                <div class="price">
+                                    <span class="amount">$450</span>
+                                    <span class="per-person">/ persona</span>
+                                </div>
+                                <div class="includes">
+                                    <span><i class="fas fa-check"></i> Equipo de seguridad</span>
+                                    <span><i class="fas fa-check"></i> Guía de montaña</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Tour Barranca de los Jilgueros">
+                                <i class="fas fa-calendar-check"></i> Reservar Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tour 3 - Fábrica de Relojes -->
+                <div class="tour-card cultural">
+                    <div class="tour-image">
+                        <img src="images/tours/fabrica-relojes.jpg" alt="Fábrica de Relojes" loading="lazy">
+                        <div class="tour-badges">
+                            <span class="badge-cultural"><i class="fas fa-landmark"></i> Cultural</span>
+                            <span class="badge-duration"><i class="fas fa-clock"></i> 3 horas</span>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <h3>Tour Fábrica de Relojes "Centenario"</h3>
+                            <div class="tour-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (67 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="tour-description">
+                            Recorrido por el taller donde se fabrican los relojes monumentales de Zacatlán. Incluye demostración y taller básico de relojería.
+                        </p>
+                        
+                        <div class="tour-features">
+                            <div class="feature">
+                                <i class="fas fa-industry"></i>
+                                <span>Tour industrial</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Taller incluido</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-souvenir"></i>
+                                <span>Souvenir de relojería</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-footer">
+                            <div class="price-info">
+                                <div class="price">
+                                    <span class="amount">$350</span>
+                                    <span class="per-person">/ persona</span>
+                                </div>
+                                <div class="includes">
+                                    <span><i class="fas fa-check"></i> Taller práctico</span>
+                                    <span><i class="fas fa-check"></i> Souvenir</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Tour Fábrica de Relojes">
+                                <i class="fas fa-calendar-check"></i> Reservar Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chignahuapan Tours -->
+    <section id="chignahuapan-tours" class="tours-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-gift"></i> Tours en Chignahuapan
+                </h2>
+                <p class="section-subtitle">Vive la magia navideña todo el año</p>
+            </div>
+            
+            <div class="tours-grid">
+                <!-- Tour 4 - Fábricas de Esferas -->
+                <div class="tour-card featured">
+                    <div class="tour-image">
+                        <img src="images/tours/fabricas-esferas.jpg" alt="Fábricas de Esferas" loading="lazy">
+                        <div class="tour-badges">
+                            <span class="badge-featured"><i class="fas fa-star"></i> Imperdible</span>
+                            <span class="badge-duration"><i class="fas fa-clock"></i> 3.5 horas</span>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <h3>Tour Fábricas de Esferas Navideñas</h3>
+                            <div class="tour-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (156 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="tour-description">
+                            Visita a talleres familiares donde crean esferas artesanales. Incluye demostración, taller de pintura y esfera personalizada de recuerdo.
+                        </p>
+                        
+                        <div class="tour-features">
+                            <div class="feature">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Taller de pintura</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-gift"></i>
+                                <span>Esfera personalizada</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Tienda de artesanías</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-footer">
+                            <div class="price-info">
+                                <div class="price">
+                                    <span class="amount">$300</span>
+                                    <span class="per-person">/ persona</span>
+                                </div>
+                                <div class="includes">
+                                    <span><i class="fas fa-check"></i> Esfera de recuerdo</span>
+                                    <span><i class="fas fa-check"></i> Materiales incluidos</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Tour Fábricas de Esferas">
+                                <i class="fas fa-calendar-check"></i> Reservar Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tour 5 - Laguna y Basílica -->
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="images/tours/laguna-basilica.jpg" alt="Laguna y Basílica" loading="lazy">
+                        <div class="tour-badges">
+                            <span class="badge-duration"><i class="fas fa-clock"></i> 4 horas</span>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <h3>Combo Laguna + Basílica</h3>
+                            <div class="tour-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.5 (92 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="tour-description">
+                            Paseo en lancha por la laguna + visita a la Basílica con la Virgen más grande de Latinoamérica. Incluye guía histórico-religioso.
+                        </p>
+                        
+                        <div class="tour-features">
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>30 min en lancha</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-church"></i>
+                                <span>Visita guiada basílica</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-camera"></i>
+                                <span>Fotos panorámicas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-footer">
+                            <div class="price-info">
+                                <div class="price">
+                                    <span class="amount">$400</span>
+                                    <span class="per-person">/ persona</span>
+                                </div>
+                                <div class="includes">
+                                    <span><i class="fas fa-check"></i> Paseo en lancha</span>
+                                    <span><i class="fas fa-check"></i> Guía especializado</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Tour Laguna y Basílica">
+                                <i class="fas fa-calendar-check"></i> Reservar Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tour 6 - Aguas Termales -->
+                <div class="tour-card wellness">
+                    <div class="tour-image">
+                        <img src="images/tours/aguas-termales.jpg" alt="Aguas Termales" loading="lazy">
+                        <div class="tour-badges">
+                            <span class="badge-wellness"><i class="fas fa-spa"></i> Wellness</span>
+                            <span class="badge-duration"><i class="fas fa-clock"></i> 5 horas</span>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <h3>Tour Aguas Termales Terapéuticas</h3>
+                            <div class="tour-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (78 reseñas)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="tour-description">
+                            Experiencia en aguas termales con propiedades curativas. Incluye acceso a 3 diferentes pozas, masaje relajante y té medicinal.
+                        </p>
+                        
+                        <div class="tour-features">
+                            <div class="feature">
+                                <i class="fas fa-temperature-high"></i>
+                                <span>38-42°C temperatura</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Masaje incluido</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <span>Tés medicinales</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-footer">
+                            <div class="price-info">
+                                <div class="price">
+                                    <span class="amount">$650</span>
+                                    <span class="per-person">/ persona</span>
+                                </div>
+                                <div class="includes">
+                                    <span><i class="fas fa-check"></i> Acceso a termales</span>
+                                    <span><i class="fas fa-check"></i> Masaje 30 min</span>
+                                </div>
+                            </div>
+                            <button class="btn-reservar" data-provider="Tour Aguas Termales">
+                                <i class="fas fa-calendar-check"></i> Reservar Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes Combinados -->
+    <section id="paquetes" class="packages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-box"></i> Paquetes Combinados
+                </h2>
+                <p class="section-subtitle">Ahorra reservando experiencias completas</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package-card popular">
+                    <div class="package-header">
+                        <h3>Paquete "Pueblos Mágicos"</h3>
+                        <div class="package-badge">Más vendido</div>
+                    </div>
+                    
+                    <div class="package-content">
+                        <div class="package-includes">
+                            <h4>Incluye:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 2 noches en hotel 4 estrellas</li>
+                                <li><i class="fas fa-check"></i> Tour Reloj Floral (Zacatlán)</li>
+                                <li><i class="fas fa-check"></i> Tour Fábricas de Esferas (Chignahuapan)</li>
+                                <li><i class="fas fa-check"></i> Transporte entre pueblos</li>
+                                <li><i class="fas fa-check"></i> 3 desayunos buffet</li>
+                                <li><i class="fas fa-check"></i> Guía bilingüe</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>3 días / 2 noches</span>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="price-comparison">
+                                <span class="original-price">$5,800</span>
+                                <span class="discount">-15%</span>
+                            </div>
+                            <div class="final-price">
+                                <span class="amount">$4,930</span>
+                                <span class="per-person">/ persona</span>
+                            </div>
+                            <p class="price-note">Base doble ocupación</p>
+                        </div>
+                        
+                        <button class="btn-package" data-package="pueblos-magicos">
+                            <i class="fas fa-shopping-cart"></i> Reservar Paquete
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Paquete "Aventura Familiar"</h3>
+                    </div>
+                    
+                    <div class="package-content">
+                        <div class="package-includes">
+                            <h4>Incluye:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 2 noches en cabaña familiar</li>
+                                <li><i class="fas fa-check"></i> Senderismo Barranca de los Jilgueros</li>
+                                <li><i class="fas fa-check"></i> Taller de esferas para niños</li>
+                                <li><i class="fas fa-check"></i> Paseo en lancha en laguna</li>
+                                <li><i class="fas fa-check"></i> Actividades recreativas</li>
+                                <li><i class="fas fa-check"></i> Seguro de viaje familiar</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>3 días / 2 noches</span>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="price-comparison">
+                                <span class="original-price">$6,500</span>
+                                <span class="discount">-10%</span>
+                            </div>
+                            <div class="final-price">
+                                <span class="amount">$5,850</span>
+                                <span class="per-person">/ familia (4 personas)</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-package" data-package="aventura-familiar">
+                            <i class="fas fa-shopping-cart"></i> Reservar Paquete
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="package-card luxury">
+                    <div class="package-header">
+                        <h3>Paquete "Lujo y Bienestar"</h3>
+                        <div class="package-badge">Premium</div>
+                    </div>
+                    
+                    <div class="package-content">
+                        <div class="package-includes">
+                            <h4>Incluye:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 3 noches en suite premium</li>
+                                <li><i class="fas fa-check"></i> Tour aguas termales VIP</li>
+                                <li><i class="fas fa-check"></i> Masajes diarios</li>
+                                <li><i class="fas fa-check"></i> Cena gourmet con chef</li>
+                                <li><i class="fas fa-check"></i> Transporte privado</li>
+                                <li><i class="fas fa-check"></i> Concierge 24/7</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>4 días / 3 noches</span>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="final-price">
+                                <span class="amount">$12,500</span>
+                                <span class="per-person">/ persona</span>
+                            </div>
+                            <p class="price-note">Experiencia exclusiva</p>
+                        </div>
+                        
+                        <button class="btn-package" data-package="lujo-bienestar">
+                            <i class="fas fa-shopping-cart"></i> Solicitar Cotización
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ruta Recomendada -->
+    <section class="itinerary-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-route"></i> Ruta Recomendada de 2 Días
+                </h2>
+                <p class="section-subtitle">Optimiza tu tiempo y vive lo mejor de ambos pueblos</p>
+            </div>
+            
+            <div class="itinerary-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-day="1">Día 1: Zacatlán</button>
+                    <button class="tab-btn" data-day="2">Día 2: Chignahuapan</button>
+                </div>
+                
+                <div class="tab-content active" id="day1">
+                    <div class="itinerary-timeline">
+                        <div class="timeline-item">
+                            <div class="time">9:00 AM</div>
+                            <div class="content">
+                                <h4>Desayuno en mercado local</h4>
+                                <p>Pozole, quesadillas y atole en el mercado municipal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time">10:00 AM</div>
+                            <div class="content">
+                                <h4>Visita al Reloj Floral</h4>
+                                <p>Tour guiado y fotos en el momento del cambio de melodía</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time">12:00 PM</div>
+                            <div class="content">
+                                <h4>Tour Fábrica de Relojes</h4>
+                                <p>Demostración y taller básico de relojería</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time">2:00 PM</div>
+                            <div class="content">
+                                <h4>Comida típica</h4>
+                                <p>Cecina de res con salsa borracha en restaurante local</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time">4:00 PM</div>
+                            <div class="content">
+                                <h4>Mirador Barranca de los Jilgueros</h4>
+                                <p>Senderismo ligero y fotos panorámicas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="time">7:00 PM</div>
+                            <div class="content">
+                                <h4>Cena y degustación de sidra</h4>
+                                <p>Restaurante con vista y cata de sidras artesanales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="day2">
+                    <!-- Contenido similar para día 2 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Tours -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas sobre Tours</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Los tours incluyen transporte?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La mayoría de tours incluyen transporte desde puntos de encuentro establecidos. Los paquetes premium incluyen recogida en hotel.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Qué debo llevar a los tours?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ropa cómoda, zapatos para caminar, protector solar, agua y cámara. Para tours de aventura, se recomienda ropa deportiva.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Hay tours privados?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos tours privados personalizados. Contáctanos para cotizar.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Los tours operan todos los días?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La mayoría sí, pero algunos tours especiales solo operan ciertos días. Consulta disponibilidad al reservar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Copiar footer de index.html -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/tours.js"></script>
+</body>
+</html>
